@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>FF4FE_ERTracker_SNI</AssemblyName>
+    <RootNamespace>FF4FE_ERTracker_SNI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf"  Version="3.28.3" />
+    <PackageReference Include="Grpc.Net.Client"  Version="2.65.0" />
+    <PackageReference Include="Grpc.Tools"       Version="2.65.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Grpc.Tools will auto-generate C# client stubs from this proto at build time -->
+    <Protobuf Include="Protos\sni.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+</Project>
